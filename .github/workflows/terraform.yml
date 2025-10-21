@@ -24,7 +24,7 @@ env:
 jobs:
     terraform:
       name: "Apply terraform code changes"
-      runs-on: ubuntu-lastest
+      runs-on: ubuntu-latest
       defaults:
         run: 
           shell: bash
@@ -41,7 +41,7 @@ jobs:
         
         - name: Terraform init
           id: init
-          run: terraform init -backend-config="bucket=BUCKET_TF_STATE"
+          run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
         
         - name: Terraform format
           id: fmt
